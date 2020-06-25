@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    La fecha de HOY es:
+</body>
+
+<script>
+
+document.write('<br>'+'metodo 1: ')
+    const ahora = new Date();
+    ahora.getFullYear();
+    ahora.getMonth;
+    ahora.getDate();
+    ahora.getHours();
+    ahora.getMinutes();
+    ahora.getSeconds();
+
+    document.write(ahora.getDate() +'/'+ ahora.getMonth() +'/'+ ahora.getFullYear());
+    
+
+    document.write('<br>'+'metodo 2: ')
+
+    let hoy=new Date();
+    let dd= hoy.getDate();
+    let mm=hoy.getMonth();
+    let yyy=hoy.getFullYear();
+
+    
+
+    document.write(dd+'/'+mm+'/'+yyy);
+
+    document.write('<br>'+'metodo 3: ')
+    
+    function agregar_Cero(i){
+
+        if(i<10){
+
+            i='0'+i;
+        }
+            return i;    
+        } 
+
+    function fecha_hoy(){
+
+        let fecha = new Date();
+        let dia = fecha.getDay();
+        let dia_numero= fecha.getDate();
+        let mes= fecha.getMonth();
+        let año= fecha.getFullYear();
+
+        
+
+        if (dia=0){
+
+            dia='Domingo';
+        } else 
+        if (dia=1){
+
+            dia='Lunes';
+        }else 
+        if (dia=2){
+
+            dia='Martes';
+        }else 
+        if (dia=3){
+
+            dia='Miercoles';
+        }else 
+        if (dia=4){
+
+            dia='Jueves';
+        }else 
+        if (dia=5){
+
+            dia='Viernes';
+        }else 
+        if (dia=6){
+
+            dia='Sabado';
+        }
+
+
+
+        dia_numero= agregar_Cero(dia_numero);
+        mes=agregar_Cero(mes);
+
+
+        return dia +' '+ dia_numero+' del '+mes+' del '+año;
+    }
+
+    document.write(fecha_hoy());
+</script>
+</html>
